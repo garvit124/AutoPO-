@@ -6,6 +6,10 @@ from config.db_config import DB_CONFIG
 from core.invoice_generator import generate_invoice_for_po
 import requests
 import os
+from dotenv import load_dotenv
+
+# Load local environment variables
+load_dotenv()
 
 # ============================================================
 # CONFIG
@@ -13,7 +17,7 @@ import os
 
 # Mock Email (Print to console) or Real SMTP can be swapped here
 ENABLE_EMAIL = True 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
 
 EMAIL_SIGNATURE = """
 Involexis
@@ -201,8 +205,8 @@ from email import encoders
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_USER = "involexis.team@gmail.com"
-EMAIL_PASS = "jspk yczo ykes ctji"
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
 
 def send_email(to_email, subject, body, attachment_path=None):
     if not to_email:

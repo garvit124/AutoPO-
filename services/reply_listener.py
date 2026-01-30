@@ -1,6 +1,7 @@
 import imaplib
 import email
 import time
+from dotenv import load_dotenv
 import requests
 from email.header import decode_header
 import re
@@ -8,16 +9,19 @@ from datetime import datetime
 import sys
 import os
 
+# Load local environment variables
+load_dotenv()
+
 # Add project root to sys.path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config.db_config import DB_CONFIG
 import psycopg2
 
-# Re-use ingestion config or load from valid source
+# Gmail Credentials from environment
 IMAP_SERVER = "imap.gmail.com"
-EMAIL_USER = "involexis.team@gmail.com"
-EMAIL_PASS = "jspk yczo ykes ctji"  
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 

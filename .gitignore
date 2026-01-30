@@ -18,6 +18,9 @@ Thumbs.db
 
 # Keep everything else as requested (.xlsx, .csv, processed_json, invoices, etc.)
 
+# Environment Variables (CRITICAL: Never commit this)
+.env
+
 # Automation Logs
 logs/*.log
 *.log

@@ -8,12 +8,16 @@ import time
 from datetime import datetime
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
+from dotenv import load_dotenv
+
+# Load local environment variables
+load_dotenv()
 
 # ================== CONFIG ================== #
 
 IMAP_SERVER = "imap.gmail.com"
-EMAIL_USER = "involexis.team@gmail.com"
-EMAIL_PASS = "jspk yczo ykes ctji"   # Gmail App Password
+EMAIL_USER = os.getenv("EMAIL_USER")
+EMAIL_PASS = os.getenv("EMAIL_PASS")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INCOMING = os.path.join(BASE_DIR, "incoming")
