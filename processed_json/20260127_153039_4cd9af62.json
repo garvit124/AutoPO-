@@ -1,0 +1,67 @@
+{
+  "file_name": "20260127_153039_4cd9af62.pdf",
+  "email_metadata": {
+    "from_email": "Falgun Dhande <erfalgundhande@gmail.com>",
+    "received_at": "Tue, 27 Jan 2026 15:30:17 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "PO-2026-1009",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Zenith Solutions LLP",
+      "gst_number": "06AAACZ3333C1Z7",
+      "address": "Tower B, Cyber City, Gurugram, Haryana 122002, India",
+      "email": ""
+    },
+    "seller": {
+      "company_name": "Skyline Traders",
+      "gst_number": "09AAACS5555E1Z9",
+      "address": "Sector 63, Noida, Uttar Pradesh 201301, India"
+    },
+    "currency": "INR",
+    "total_amount": "704286.4",
+    "line_items": [
+      {
+        "product_id": "FKP0040454",
+        "product_identifier_raw": "Sony Series 592 Mobiles",
+        "product_identifier_type": "SKU",
+        "description": "Sony Series 592 Mobiles",
+        "unit": "Mobiles",
+        "quantity": "9",
+        "unit_price": "40483.37",
+        "line_total": "364350.33"
+      },
+      {
+        "product_id": "FKP0049357",
+        "product_identifier_raw": "Reebok Model 643 Toys",
+        "product_identifier_type": "SKU",
+        "description": "Reebok Model 643 Toys",
+        "unit": "Toys",
+        "quantity": "3",
+        "unit_price": "16444.02",
+        "line_total": "49332.06"
+      },
+      {
+        "product_id": "FKP0048431",
+        "product_identifier_raw": "Puma Model 697 Toys",
+        "product_identifier_type": "SKU",
+        "description": "Puma Model 697 Toys",
+        "unit": "Toys",
+        "quantity": "8",
+        "unit_price": "18457.04",
+        "line_total": "147656.32"
+      },
+      {
+        "product_id": "FKP0058496",
+        "product_identifier_raw": "Dell Model 220 Fashion",
+        "product_identifier_type": "SKU",
+        "description": "Dell Model 220 Fashion",
+        "unit": "Fashion",
+        "quantity": "1",
+        "unit_price": "35514.17",
+        "line_total": "35514.17"
+      }
+    ]
+  }
+}

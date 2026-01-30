@@ -1,0 +1,57 @@
+{
+  "file_name": "20260128_163458_3209dabd.pdf",
+  "email_metadata": {
+    "from_email": "Falgun Dhande <erfalgundhande@gmail.com>",
+    "received_at": "Wed, 28 Jan 2026 16:34:37 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "PO2026004",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Customer Company",
+      "gst_number": "29ABCDE32Z5",
+      "address": "Bangalore, Karnataka - 560102",
+      "email": ""
+    },
+    "seller": {
+      "company_name": "Involexis.Team Private Limited",
+      "gst_number": "27AAFCI1234Z1ZQ",
+      "address": "Tower B, Tech Park, Hinjewadi Phase 2, Industrial Area, Pune, Maharashtra - 411057, India"
+    },
+    "currency": "INR",
+    "total_amount": "692977.74",
+    "line_items": [
+      {
+        "product_id": "FKP0063028",
+        "product_identifier_raw": "Redmi Series",
+        "product_identifier_type": "SKU",
+        "description": "Redmi Series",
+        "unit": "n",
+        "quantity": "58405.52",
+        "unit_price": "",
+        "line_total": "408838.64"
+      },
+      {
+        "product_id": "FKP0012069",
+        "product_identifier_raw": "Whirlpool Edition 263 Toys",
+        "product_identifier_type": "SKU",
+        "description": "Whirlpool Edition 263 Toys",
+        "unit": "n",
+        "quantity": "8",
+        "unit_price": "11837.62",
+        "line_total": "94700.96"
+      },
+      {
+        "product_id": "FKP0071765",
+        "product_identifier_raw": "HP Ultra 398 Appliances",
+        "product_identifier_type": "SKU",
+        "description": "HP Ultra 398 Appliances",
+        "unit": "n",
+        "quantity": "3",
+        "unit_price": "27909.89",
+        "line_total": "83729.67"
+      }
+    ]
+  }
+}

@@ -1,0 +1,423 @@
+[2026-01-23 14:25:12] 🚀 Starting email ingestion
+[2026-01-23 14:25:15] ✅ Logged in to IMAP successfully
+[2026-01-23 14:25:15] 
+📂 Selecting mailbox: INBOX
+[2026-01-23 14:25:16] Select status: OK
+[2026-01-23 14:25:16] Search status: OK
+[2026-01-23 14:25:16] 📨 Found 20 emails
+[2026-01-23 14:25:19] Fetch result: OK
+[2026-01-23 14:25:19] 📧 Subject: Purchase Order
+[2026-01-23 14:25:19] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-23 14:25:19] 📎 Attachment detected: Purchase-Order-Template-02-TemplateLab.pdf
+[2026-01-23 14:27:09] 🚀 Starting email ingestion
+[2026-01-23 14:27:11] ✅ Logged in to IMAP successfully
+[2026-01-23 14:27:11] 
+📂 Selecting mailbox: INBOX
+[2026-01-23 14:27:11] Select status: OK
+[2026-01-23 14:27:12] Search status: OK
+[2026-01-23 14:27:12] 📨 Found 21 emails
+[2026-01-23 14:27:13] Fetch result: OK
+[2026-01-23 14:27:13] 📧 Subject: Celebrations
+[2026-01-23 14:27:13] 📎 Attachment detected: Purchase-Order-Template-02-TemplateLab.com_.pdf
+[2026-01-23 14:32:16] 🚀 Starting email ingestion
+[2026-01-23 14:32:18] ✅ Logged in to IMAP successfully
+[2026-01-23 14:32:18] 
+📂 Selecting mailbox: INBOX
+[2026-01-23 14:32:18] Select status: OK
+[2026-01-23 14:32:18] Search status: OK
+[2026-01-23 14:32:18] 📨 Found 21 emails
+[2026-01-23 14:32:20] Fetch result: OK
+[2026-01-23 14:32:20] 📧 Subject: Celebrations
+[2026-01-23 14:32:20] 📎 Attachment detected: Purchase-Order-Template-02-TemplateLab.com_.pdf
+[2026-01-23 14:32:20] 📎 Saved attachment: 20260123_143220_3007d8de.pdf
+[2026-01-23 14:32:21] Fetch result: OK
+[2026-01-23 14:32:21] 📧 Subject: Purchase orderrrrrrr
+[2026-01-23 14:32:21] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-23 14:32:21] 📎 Saved attachment: 20260123_143221_ea4b9d4c.pdf
+[2026-01-23 14:32:21] Fetch result: OK
+[2026-01-23 14:32:21] 📧 Subject: Requesting PO
+[2026-01-23 14:32:21] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-23 14:32:22] Fetch result: OK
+[2026-01-23 14:32:22] 📧 Subject: po
+[2026-01-23 14:32:22] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-23 14:32:22] Fetch result: OK
+[2026-01-23 14:32:22] 📧 Subject: Fwd: po
+[2026-01-23 14:32:22] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-23 14:32:23] Fetch result: OK
+[2026-01-23 14:32:23] 📧 Subject: po order
+[2026-01-23 14:32:23] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-23 14:32:23] Fetch result: OK
+[2026-01-23 14:32:23] 📧 Subject: Fwd: po order
+[2026-01-23 14:32:23] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-23 14:32:24] Fetch result: OK
+[2026-01-23 14:32:24] 📧 Subject: Security alert
+[2026-01-23 14:32:24] Fetch result: OK
+[2026-01-23 14:32:24] 📧 Subject: 
+[2026-01-23 14:32:24] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-23 14:32:24] 📎 Saved attachment: 20260123_143224_90665de8.pdf
+[2026-01-23 14:32:25] Fetch result: OK
+[2026-01-23 14:32:25] 📧 Subject: Fwd: purchase order po
+[2026-01-23 14:32:25] 📎 Attachment detected: po.pdf
+[2026-01-23 14:32:25] 📎 Saved attachment: 20260123_143225_7d8e7535.pdf
+[2026-01-23 14:32:25] 
+📂 Selecting mailbox: [Gmail]/All Mail
+[2026-01-24 14:10:33] 🚀 Starting email ingestion
+[2026-01-24 14:10:35] ✅ Logged in to IMAP successfully
+[2026-01-24 14:10:35] 
+📂 Selecting mailbox: INBOX
+[2026-01-24 14:10:35] Select status: OK
+[2026-01-24 14:10:35] Search status: OK
+[2026-01-24 14:10:35] 📨 Found 21 emails
+[2026-01-24 14:10:37] Fetch result: OK
+[2026-01-24 14:10:37] 📧 Subject: Celebrations
+[2026-01-24 14:10:37] 📎 Attachment detected: Purchase-Order-Template-02-TemplateLab.com_.pdf
+[2026-01-24 14:10:37] 📎 Saved attachment: 20260124_141037_0e03eafc.pdf
+[2026-01-24 14:10:37] Fetch result: OK
+[2026-01-24 14:10:37] 📧 Subject: Purchase orderrrrrrr
+[2026-01-24 14:10:37] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-24 14:10:37] 📎 Saved attachment: 20260124_141037_98a66004.pdf
+[2026-01-24 14:10:38] Fetch result: OK
+[2026-01-24 14:10:38] 📧 Subject: Requesting PO
+[2026-01-24 14:10:38] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:10:38] Fetch result: OK
+[2026-01-24 14:10:38] 📧 Subject: po
+[2026-01-24 14:10:38] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:10:39] Fetch result: OK
+[2026-01-24 14:10:39] 📧 Subject: Fwd: po
+[2026-01-24 14:10:39] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:10:39] Fetch result: OK
+[2026-01-24 14:10:39] 📧 Subject: po order
+[2026-01-24 14:10:39] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:10:39] Fetch result: OK
+[2026-01-24 14:10:39] 📧 Subject: Fwd: po order
+[2026-01-24 14:10:39] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:10:40] Fetch result: OK
+[2026-01-24 14:10:40] 📧 Subject: Security alert
+[2026-01-24 14:10:40] Fetch result: OK
+[2026-01-24 14:10:40] 📧 Subject: 
+[2026-01-24 14:10:40] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-24 14:10:40] 📎 Saved attachment: 20260124_141040_1e23cb58.pdf
+[2026-01-24 14:10:40] Fetch result: OK
+[2026-01-24 14:10:40] 📧 Subject: Fwd: purchase order po
+[2026-01-24 14:10:40] 📎 Attachment detected: po.pdf
+[2026-01-24 14:10:40] 📎 Saved attachment: 20260124_141040_c31761fe.pdf
+[2026-01-24 14:10:40] 
+📂 Selecting mailbox: [Gmail]/All Mail
+[2026-01-24 14:12:27] 🚀 Starting email ingestion
+[2026-01-24 14:12:28] ✅ Logged in to IMAP successfully
+[2026-01-24 14:12:28] 
+📂 Selecting mailbox: INBOX
+[2026-01-24 14:12:28] Select status: OK
+[2026-01-24 14:12:29] Search status: OK
+[2026-01-24 14:12:29] 📨 Found 21 emails
+[2026-01-24 14:12:30] Fetch result: OK
+[2026-01-24 14:12:30] 📧 Subject: Celebrations
+[2026-01-24 14:12:30] 📎 Attachment detected: Purchase-Order-Template-02-TemplateLab.com_.pdf
+[2026-01-24 14:12:30] 📎 Saved attachment: 20260124_141230_7ea979e4.pdf
+[2026-01-24 14:12:31] Fetch result: OK
+[2026-01-24 14:12:31] 📧 Subject: Purchase orderrrrrrr
+[2026-01-24 14:12:31] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-24 14:12:31] 📎 Saved attachment: 20260124_141231_1d27a5ab.pdf
+[2026-01-24 14:12:31] Fetch result: OK
+[2026-01-24 14:12:31] 📧 Subject: Requesting PO
+[2026-01-24 14:12:31] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:31] Fetch result: OK
+[2026-01-24 14:12:31] 📧 Subject: po
+[2026-01-24 14:12:31] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:31] Fetch result: OK
+[2026-01-24 14:12:31] 📧 Subject: Fwd: po
+[2026-01-24 14:12:31] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:32] Fetch result: OK
+[2026-01-24 14:12:32] 📧 Subject: po order
+[2026-01-24 14:12:32] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:32] Fetch result: OK
+[2026-01-24 14:12:32] 📧 Subject: Fwd: po order
+[2026-01-24 14:12:32] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:32] Fetch result: OK
+[2026-01-24 14:12:32] 📧 Subject: Security alert
+[2026-01-24 14:12:33] Fetch result: OK
+[2026-01-24 14:12:33] 📧 Subject: 
+[2026-01-24 14:12:33] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-24 14:12:33] 📎 Saved attachment: 20260124_141233_2dd79faf.pdf
+[2026-01-24 14:12:33] Fetch result: OK
+[2026-01-24 14:12:33] 📧 Subject: Fwd: purchase order po
+[2026-01-24 14:12:33] 📎 Attachment detected: po.pdf
+[2026-01-24 14:12:33] 📎 Saved attachment: 20260124_141233_910c07a6.pdf
+[2026-01-24 14:12:33] 
+📂 Selecting mailbox: "[Gmail]/All Mail"
+[2026-01-24 14:12:33] Select status: OK
+[2026-01-24 14:12:34] Search status: OK
+[2026-01-24 14:12:34] 📨 Found 21 emails
+[2026-01-24 14:12:34] Fetch result: OK
+[2026-01-24 14:12:34] 📧 Subject: Celebrations
+[2026-01-24 14:12:34] 📎 Attachment detected: Purchase-Order-Template-02-TemplateLab.com_.pdf
+[2026-01-24 14:12:34] 📎 Saved attachment: 20260124_141234_51eab880.pdf
+[2026-01-24 14:12:34] Fetch result: OK
+[2026-01-24 14:12:34] 📧 Subject: Purchase orderrrrrrr
+[2026-01-24 14:12:34] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-24 14:12:35] 📎 Saved attachment: 20260124_141234_5b44dad7.pdf
+[2026-01-24 14:12:35] Fetch result: OK
+[2026-01-24 14:12:35] 📧 Subject: Requesting PO
+[2026-01-24 14:12:35] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:35] Fetch result: OK
+[2026-01-24 14:12:35] 📧 Subject: po
+[2026-01-24 14:12:35] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:35] Fetch result: OK
+[2026-01-24 14:12:35] 📧 Subject: Fwd: po
+[2026-01-24 14:12:35] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:36] Fetch result: OK
+[2026-01-24 14:12:36] 📧 Subject: po order
+[2026-01-24 14:12:36] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:36] Fetch result: OK
+[2026-01-24 14:12:36] 📧 Subject: Fwd: po order
+[2026-01-24 14:12:36] 📎 Attachment detected: Purchase-Order-Template-03-TemplateLab.docx
+[2026-01-24 14:12:36] Fetch result: OK
+[2026-01-24 14:12:36] 📧 Subject: Security alert
+[2026-01-24 14:12:37] Fetch result: OK
+[2026-01-24 14:12:37] 📧 Subject: 
+[2026-01-24 14:12:37] 📎 Attachment detected: 5000337699_P.O..pdf
+[2026-01-24 14:12:37] 📎 Saved attachment: 20260124_141237_0002ab24.pdf
+[2026-01-24 14:12:37] Fetch result: OK
+[2026-01-24 14:12:37] 📧 Subject: Fwd: purchase order po
+[2026-01-24 14:12:37] 📎 Attachment detected: po.pdf
+[2026-01-24 14:12:37] 📎 Saved attachment: 20260124_141237_cad7565d.pdf
+[2026-01-24 14:12:37] 🔒 Logged out from IMAP
+[2026-01-24 14:12:37] ✅ Email ingestion completed
+[2026-01-24 15:01:57] Email ingestion service started
+[2026-01-24 15:01:59] No new unread emails
+[2026-01-24 15:02:07] No new unread emails
+[2026-01-24 15:02:14] No new unread emails
+[2026-01-24 15:02:22] No new unread emails
+[2026-01-24 15:02:29] No new unread emails
+[2026-01-24 15:02:36] No new unread emails
+[2026-01-24 15:02:44] No new unread emails
+[2026-01-24 15:02:51] New email detected | Subject: po
+[2026-01-24 15:02:51] Saved attachment: 20260124_150251_f87eec2c.pdf
+[2026-01-24 15:02:51] Email marked as read
+[2026-01-24 15:02:59] No new unread emails
+[2026-01-24 15:03:06] No new unread emails
+[2026-01-24 15:03:14] No new unread emails
+[2026-01-24 15:03:21] No new unread emails
+[2026-01-24 15:03:28] No new unread emails
+[2026-01-24 15:03:36] No new unread emails
+[2026-01-24 15:03:43] No new unread emails
+[2026-01-24 15:03:51] No new unread emails
+[2026-01-24 15:03:58] No new unread emails
+[2026-01-24 15:04:05] No new unread emails
+[2026-01-24 15:04:12] No new unread emails
+[2026-01-24 15:04:20] No new unread emails
+[2026-01-24 15:04:27] No new unread emails
+[2026-01-24 15:04:34] No new unread emails
+[2026-01-24 15:04:42] No new unread emails
+[2026-01-24 15:04:49] No new unread emails
+[2026-01-24 15:04:57] No new unread emails
+[2026-01-24 15:05:05] No new unread emails
+[2026-01-24 15:05:12] No new unread emails
+[2026-01-24 15:05:19] No new unread emails
+[2026-01-24 15:05:24] Email ingestion service stopped by user
+[2026-01-24 18:19:16] Email ingestion service started
+[2026-01-24 18:19:17] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:23] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:29] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:35] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:40] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:46] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:52] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:19:58] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:20:04] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:20:10] Error: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+[2026-01-24 18:23:32] Email ingestion service started
+[2026-01-24 18:25:52] Processing email: po
+[2026-01-24 18:25:52] Saved attachment: 20260124_182552_fd615b9a.pdf
+[2026-01-24 18:27:05] Service stopped by user
+[2026-01-24 18:29:01] Email ingestion service started
+[2026-01-24 18:29:34] Processing email: purchase order
+[2026-01-24 18:29:34] Saved attachment: 20260124_182934_4d696bc7.pdf
+[2026-01-24 18:33:55] Service stopped by user
+[2026-01-26 14:46:03] Email ingestion service started
+[2026-01-26 14:46:05] New unread mail found | Subject: po
+[2026-01-26 14:46:05] Saved attachment: 20260126_144605_522b9b5e.pdf
+[2026-01-26 14:46:12] No new unread mail
+[2026-01-26 14:46:19] No new unread mail
+[2026-01-26 14:46:26] No new unread mail
+[2026-01-26 14:46:32] No new unread mail
+[2026-01-26 14:46:39] No new unread mail
+[2026-01-26 14:46:46] No new unread mail
+[2026-01-26 14:46:52] No new unread mail
+[2026-01-26 14:46:59] No new unread mail
+[2026-01-26 14:47:06] No new unread mail
+[2026-01-26 14:47:13] No new unread mail
+[2026-01-26 14:47:20] No new unread mail
+[2026-01-26 14:47:27] No new unread mail
+[2026-01-26 14:47:33] No new unread mail
+[2026-01-26 14:47:40] No new unread mail
+[2026-01-26 14:47:47] No new unread mail
+[2026-01-26 14:47:54] No new unread mail
+[2026-01-26 14:48:01] No new unread mail
+[2026-01-26 14:48:07] No new unread mail
+[2026-01-26 14:48:14] No new unread mail
+[2026-01-26 14:48:21] No new unread mail
+[2026-01-26 14:48:28] No new unread mail
+[2026-01-26 14:48:35] No new unread mail
+[2026-01-26 14:48:42] No new unread mail
+[2026-01-26 14:48:48] No new unread mail
+[2026-01-26 14:48:55] No new unread mail
+[2026-01-26 14:49:02] No new unread mail
+[2026-01-26 14:49:09] No new unread mail
+[2026-01-26 14:49:16] No new unread mail
+[2026-01-26 14:49:22] No new unread mail
+[2026-01-26 14:49:29] No new unread mail
+[2026-01-26 14:49:36] No new unread mail
+[2026-01-26 14:49:43] No new unread mail
+[2026-01-26 14:49:50] No new unread mail
+[2026-01-26 14:49:56] No new unread mail
+[2026-01-26 14:50:03] No new unread mail
+[2026-01-26 14:50:10] No new unread mail
+[2026-01-26 14:50:17] No new unread mail
+[2026-01-26 14:50:24] No new unread mail
+[2026-01-26 14:50:31] No new unread mail
+[2026-01-26 14:50:37] No new unread mail
+[2026-01-26 14:50:44] No new unread mail
+[2026-01-26 14:50:51] No new unread mail
+[2026-01-26 14:50:58] No new unread mail
+[2026-01-26 14:51:05] No new unread mail
+[2026-01-26 14:51:11] No new unread mail
+[2026-01-26 14:51:18] No new unread mail
+[2026-01-26 14:51:25] No new unread mail
+[2026-01-26 14:51:32] No new unread mail
+[2026-01-26 14:51:39] No new unread mail
+[2026-01-26 14:51:46] No new unread mail
+[2026-01-26 14:51:52] No new unread mail
+[2026-01-26 14:51:59] No new unread mail
+[2026-01-26 14:52:06] No new unread mail
+[2026-01-26 14:52:13] New unread mail found | Subject: 
+[2026-01-26 14:52:13] Saved attachment: 20260126_145213_29d71294.pdf
+[2026-01-26 14:52:21] No new unread mail
+[2026-01-26 14:52:27] No new unread mail
+[2026-01-26 14:52:34] No new unread mail
+[2026-01-26 14:52:41] No new unread mail
+[2026-01-26 14:52:48] No new unread mail
+[2026-01-26 14:52:55] No new unread mail
+[2026-01-26 14:53:01] No new unread mail
+[2026-01-26 14:53:08] No new unread mail
+[2026-01-26 14:53:15] No new unread mail
+[2026-01-26 14:53:21] No new unread mail
+[2026-01-26 14:53:24] Email ingestion stopped
+[2026-01-26 14:54:24] Email ingestion service started
+[2026-01-26 14:54:26] No new unread mail
+[2026-01-26 14:54:33] No new unread mail
+[2026-01-26 14:54:39] No new unread mail
+[2026-01-26 14:54:46] No new unread mail
+[2026-01-26 14:54:53] No new unread mail
+[2026-01-26 14:55:00] No new unread mail
+[2026-01-26 14:55:06] No new unread mail
+[2026-01-26 14:55:13] No new unread mail
+[2026-01-26 14:55:19] No new unread mail
+[2026-01-26 14:55:26] No new unread mail
+[2026-01-26 14:55:33] New unread mail found | Subject: 
+[2026-01-26 14:55:33] Saved attachment: 20260126_145533_3b23baed.pdf
+[2026-01-26 14:55:40] No new unread mail
+[2026-01-26 14:55:47] No new unread mail
+[2026-01-26 14:55:54] No new unread mail
+[2026-01-26 14:56:00] No new unread mail
+[2026-01-26 14:56:07] No new unread mail
+[2026-01-26 14:56:14] No new unread mail
+[2026-01-26 14:56:21] No new unread mail
+[2026-01-26 14:56:27] No new unread mail
+[2026-01-26 14:56:34] No new unread mail
+[2026-01-26 14:56:41] No new unread mail
+[2026-01-26 14:56:48] No new unread mail
+[2026-01-26 14:56:54] No new unread mail
+[2026-01-26 14:57:01] No new unread mail
+[2026-01-26 14:57:07] No new unread mail
+[2026-01-26 14:57:14] No new unread mail
+[2026-01-26 14:57:21] No new unread mail
+[2026-01-26 14:57:28] No new unread mail
+[2026-01-26 14:57:35] No new unread mail
+[2026-01-26 14:57:42] No new unread mail
+[2026-01-26 14:57:48] No new unread mail
+[2026-01-26 14:57:55] No new unread mail
+[2026-01-26 14:58:02] No new unread mail
+[2026-01-26 14:58:09] No new unread mail
+[2026-01-26 14:58:16] No new unread mail
+[2026-01-26 14:58:22] No new unread mail
+[2026-01-26 14:58:29] No new unread mail
+[2026-01-26 14:58:36] No new unread mail
+[2026-01-26 14:58:43] No new unread mail
+[2026-01-26 14:58:49] No new unread mail
+[2026-01-26 14:58:56] No new unread mail
+[2026-01-26 14:59:03] No new unread mail
+[2026-01-26 14:59:10] No new unread mail
+[2026-01-26 14:59:16] No new unread mail
+[2026-01-26 14:59:23] No new unread mail
+[2026-01-26 14:59:30] No new unread mail
+[2026-01-26 14:59:37] No new unread mail
+[2026-01-26 14:59:43] No new unread mail
+[2026-01-26 14:59:50] No new unread mail
+[2026-01-26 14:59:57] No new unread mail
+[2026-01-26 15:00:04] No new unread mail
+[2026-01-26 15:00:10] No new unread mail
+[2026-01-26 15:00:17] No new unread mail
+[2026-01-26 15:00:24] No new unread mail
+[2026-01-26 15:00:30] No new unread mail
+[2026-01-26 15:00:37] No new unread mail
+[2026-01-26 15:00:44] No new unread mail
+[2026-01-26 15:00:51] No new unread mail
+[2026-01-26 15:00:58] No new unread mail
+[2026-01-26 15:01:04] No new unread mail
+[2026-01-26 15:01:11] No new unread mail
+[2026-01-26 15:01:18] No new unread mail
+[2026-01-26 15:01:24] No new unread mail
+[2026-01-26 15:01:31] No new unread mail
+[2026-01-26 15:01:38] No new unread mail
+[2026-01-26 15:01:45] No new unread mail
+[2026-01-26 15:01:52] No new unread mail
+[2026-01-26 15:01:58] No new unread mail
+[2026-01-26 15:02:05] No new unread mail
+[2026-01-26 15:02:12] No new unread mail
+[2026-01-26 15:02:19] No new unread mail
+[2026-01-26 15:02:25] No new unread mail
+[2026-01-26 15:02:32] No new unread mail
+[2026-01-26 15:02:39] No new unread mail
+[2026-01-26 15:02:45] No new unread mail
+[2026-01-26 15:02:52] No new unread mail
+[2026-01-26 15:02:59] No new unread mail
+[2026-01-26 15:03:06] No new unread mail
+[2026-01-26 15:03:12] No new unread mail
+[2026-01-26 15:03:19] No new unread mail
+[2026-01-26 15:03:26] No new unread mail
+[2026-01-26 15:03:33] No new unread mail
+[2026-01-26 15:03:40] No new unread mail
+[2026-01-26 15:03:46] No new unread mail
+[2026-01-26 15:03:53] No new unread mail
+[2026-01-26 15:04:00] No new unread mail
+[2026-01-26 15:04:07] No new unread mail
+[2026-01-26 15:04:14] No new unread mail
+[2026-01-26 15:04:21] No new unread mail
+[2026-01-26 15:04:28] No new unread mail
+[2026-01-26 15:04:35] No new unread mail
+[2026-01-26 15:04:42] No new unread mail
+[2026-01-26 15:04:45] Email ingestion stopped
+[2026-01-26 15:18:55] Email ingestion service started
+[2026-01-26 15:18:56] No new unread mail
+[2026-01-26 15:19:03] No new unread mail
+[2026-01-26 15:19:10] No new unread mail
+[2026-01-26 15:19:17] No new unread mail
+[2026-01-26 15:19:23] No new unread mail
+[2026-01-26 15:19:30] No new unread mail
+[2026-01-26 15:19:37] No new unread mail
+[2026-01-26 15:19:44] No new unread mail
+[2026-01-26 15:19:51] No new unread mail
+[2026-01-26 15:19:57] No new unread mail
+[2026-01-26 15:20:04] No new unread mail
+[2026-01-26 15:20:11] No new unread mail
+[2026-01-26 15:20:18] No new unread mail
+[2026-01-26 15:20:25] No new unread mail
+[2026-01-26 15:20:32] No new unread mail
+[2026-01-26 15:20:38] No new unread mail
+[2026-01-26 15:20:45] No new unread mail
+[2026-01-26 15:20:52] No new unread mail
+[2026-01-26 15:20:59] No new unread mail
+[2026-01-26 15:21:06] No new unread mail
+[2026-01-26 15:21:12] No new unread mail
+[2026-01-26 15:21:15] Email ingestion stopped

@@ -1,0 +1,37 @@
+{
+  "file_name": "20260128_013055_024a5a27.pdf",
+  "email_metadata": {
+    "from_email": "involexis.team@gmail.com",
+    "received_at": "Tue, 27 Jan 2026 11:15:24 -0800 (PST)"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "PO-SENDER-TEST",
+    "po_date": "2026-01-28",
+    "buyer": {
+      "company_name": "",
+      "gst_number": "",
+      "address": "",
+      "email": ""
+    },
+    "seller": {
+      "company_name": "InvoLexis",
+      "gst_number": "",
+      "address": "Navi Mumbai"
+    },
+    "currency": "INR",
+    "total_amount": "2950.00",
+    "line_items": [
+      {
+        "product_id": "",
+        "product_identifier_raw": "Test Product Full Stock",
+        "product_identifier_type": "SKU",
+        "description": "Test Product Full Stock",
+        "unit": "",
+        "quantity": "5",
+        "unit_price": "500.00",
+        "line_total": "2500.00"
+      }
+    ]
+  }
+}

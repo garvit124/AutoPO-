@@ -1,0 +1,86 @@
+{
+  "file_name": "20260127_154011_c994f454.pdf",
+  "email_metadata": {
+    "from_email": "Falgun Dhande <erfalgundhande@gmail.com>",
+    "received_at": "Tue, 27 Jan 2026 15:39:17 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Kyndryl Solutions Pvt Ltd",
+      "gst_number": "",
+      "address": "Bangalore, KA"
+    },
+    "seller": {
+      "company_name": "TechMart India",
+      "gst_number": "",
+      "address": "Gurgaon"
+    },
+    "currency": "INR",
+    "total_amount": "2676429.68",
+    "line_items": [
+      {
+        "product_id": "FKP0005242",
+        "product_identifier_raw": "HP Series 888 HP",
+        "product_identifier_type": "SKU",
+        "description": "HP Series 888 HP",
+        "unit": "",
+        "quantity": "11",
+        "unit_price": "26672.10",
+        "line_total": "293393.10"
+      },
+      {
+        "product_id": "FKP0004218",
+        "product_identifier_raw": "Puma Series 590 Puma",
+        "product_identifier_type": "SKU",
+        "description": "Puma Series 590 Puma",
+        "unit": "",
+        "quantity": "20",
+        "unit_price": "12118.66",
+        "line_total": "242373.20"
+      },
+      {
+        "product_id": "FKP0025191",
+        "product_identifier_raw": "Puma Series 39 Puma",
+        "product_identifier_type": "SKU",
+        "description": "Puma Series 39 Puma",
+        "unit": "",
+        "quantity": "17",
+        "unit_price": "39822.70",
+        "line_total": "676985.90"
+      },
+      {
+        "product_id": "FKP0065526",
+        "product_identifier_raw": "Sony Edition 934 Sony",
+        "product_identifier_type": "SKU",
+        "description": "Sony Edition 934 Sony",
+        "unit": "",
+        "quantity": "5",
+        "unit_price": "25381.24",
+        "line_total": "126906.20"
+      },
+      {
+        "product_id": "FKP0060717",
+        "product_identifier_raw": "Whirlpool Ultra 12 Whirlpool",
+        "product_identifier_type": "SKU",
+        "description": "Whirlpool Ultra 12 Whirlpool",
+        "unit": "",
+        "quantity": "15",
+        "unit_price": "46767.55",
+        "line_total": "701513.25"
+      },
+      {
+        "product_id": "FKP0062815",
+        "product_identifier_raw": "Redmi Prime 37 Redmi",
+        "product_identifier_type": "SKU",
+        "description": "Redmi Prime 37 Redmi",
+        "unit": "",
+        "quantity": "11",
+        "unit_price": "57750.73",
+        "line_total": "635258.03"
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "file_name": "20260127_151658_6ec81063.pdf",
+  "email_metadata": {
+    "from_email": "Falgun Dhande <erfalgundhande@gmail.com>",
+    "received_at": "Tue, 27 Jan 2026 15:15:53 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "PO-2026-1003",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Nova Industries Ltd",
+      "gst_number": "27AAACN2222B1Z6",
+      "address": "Plot 44, MIDC Industrial Area, Andheri East, Mumbai, Maharashtra 400093, India",
+      "email": ""
+    },
+    "seller": {
+      "company_name": "Skyline Traders",
+      "gst_number": "09AAACS5555E1Z9",
+      "address": "Sector 63, Noida, Uttar Pradesh 201301, India"
+    },
+    "currency": "INR",
+    "total_amount": "444412.2",
+    "line_items": [
+      {
+        "product_id": "FKP0048768",
+        "product_identifier_raw": "Nike Prime 772",
+        "product_identifier_type": "SKU",
+        "description": "Nike Prime 772 Sports",
+        "unit": "Sports",
+        "quantity": "7",
+        "unit_price": "2881.27",
+        "line_total": "20168.89"
+      },
+      {
+        "product_id": "FKP0019802",
+        "product_identifier_raw": "Boat Series 753",
+        "product_identifier_type": "SKU",
+        "description": "Boat Series 753 Mobiles",
+        "unit": "Mobiles",
+        "quantity": "2",
+        "unit_price": "28520.03",
+        "line_total": "57040.06"
+      },
+      {
+        "product_id": "FKP0035039",
+        "product_identifier_raw": "LG Prime 817",
+        "product_identifier_type": "SKU",
+        "description": "LG Prime 817 Electronics",
+        "unit": "Electronics",
+        "quantity": "3",
+        "unit_price": "15935.64",
+        "line_total": "47806.92"
+      },
+      {
+        "product_id": "FKP0008018",
+        "product_identifier_raw": "Apple Edition 79",
+        "product_identifier_type": "SKU",
+        "description": "Apple Edition 79 Electronics",
+        "unit": "Electronics",
+        "quantity": "7",
+        "unit_price": "35943.52",
+        "line_total": "251604.64"
+      }
+    ]
+  }
+}

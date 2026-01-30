@@ -1,0 +1,57 @@
+{
+  "file_name": "20260128_184652_ac23d16b.pdf",
+  "email_metadata": {
+    "from_email": "Falgun Dhande <erfalgundhande@gmail.com>",
+    "received_at": "Wed, 28 Jan 2026 18:46:32 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "PO2026002",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Customer Company 2",
+      "gst_number": "29ABCDE12Z5",
+      "address": "Bangalore, Karnataka - 560102",
+      "email": ""
+    },
+    "seller": {
+      "company_name": "Involexis.Team Private Limited",
+      "gst_number": "27AAFCI1234Z1ZQ",
+      "address": "Tower B, Tech Park, Hinjewadi Phase 2 95 Industrial Area, Pune, Maharashtra - 411057, India"
+    },
+    "currency": "INR",
+    "total_amount": "639692.73",
+    "line_items": [
+      {
+        "product_id": "FKP0052128",
+        "product_identifier_raw": "Sony Ultra 294",
+        "product_identifier_type": "SKU",
+        "description": "Sony Ultra 294 Home & Kitchen",
+        "unit": "n",
+        "quantity": "3",
+        "unit_price": "24172.96",
+        "line_total": "72518.88"
+      },
+      {
+        "product_id": "FKP0049806",
+        "product_identifier_raw": "Apple Ultra 509",
+        "product_identifier_type": "SKU",
+        "description": "Apple Ultra 509 Electronics",
+        "unit": "n",
+        "quantity": "10",
+        "unit_price": "20758.17",
+        "line_total": "207581.70"
+      },
+      {
+        "product_id": "FKP0054108",
+        "product_identifier_raw": "Boat Series 439",
+        "product_identifier_type": "SKU",
+        "description": "Boat Series 439 Toys",
+        "unit": "n",
+        "quantity": "6",
+        "unit_price": "43668.65",
+        "line_total": "262011.90"
+      }
+    ]
+  }
+}

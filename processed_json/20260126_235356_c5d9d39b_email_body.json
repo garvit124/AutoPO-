@@ -1,0 +1,37 @@
+{
+  "file_name": "20260126_235356_c5d9d39b_email_body.pdf",
+  "email_metadata": {
+    "from_email": "Garvit Gupta <garvitgupta2444@gmail.com>",
+    "received_at": "Mon, 26 Jan 2026 23:53:06 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "",
+    "po_date": "",
+    "buyer": {
+      "company_name": "XYZ Technologies Pvt Ltd",
+      "gst_number": "",
+      "address": "Noida, Uttar Pradesh",
+      "email": "Garvit Gupta <garvitgupta2444@gmail.com>"
+    },
+    "seller": {
+      "company_name": "ABC Solutions Pvt Ltd",
+      "gst_number": "27AAABC1234F1Z2",
+      "address": ""
+    },
+    "currency": "",
+    "total_amount": "800000",
+    "line_items": [
+      {
+        "product_id": "",
+        "product_identifier_raw": "SQL Database Support Service",
+        "product_identifier_type": "Description",
+        "description": "SQL Database Support Service",
+        "unit": "YEAR",
+        "quantity": "1",
+        "unit_price": "800000",
+        "line_total": "800000"
+      }
+    ]
+  }
+}

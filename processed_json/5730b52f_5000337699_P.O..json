@@ -1,0 +1,37 @@
+{
+  "file_name": "5730b52f_5000337699_P.O..pdf",
+  "email_metadata": {
+    "from_email": "Garvit Gupta <garvit.cdac.mum.aug25@gmail.com>",
+    "received_at": "Mon, 26 Jan 2026 23:41:43 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "5000337699",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Intellioz Solutions India Private Ltd.",
+      "gst_number": "07AABCP0224D1Z4",
+      "address": "FIRST FLOOR, SUITE NO. 115, DLF GALLERIA, MAYUR (NEW), DELHI - 110091, INDIA",
+      "email": "Garvit Gupta <garvit.cdac.mum.aug25@gmail.com>"
+    },
+    "seller": {
+      "company_name": "Kyndryl Solutions Private Ltd.",
+      "gst_number": "29AAICG7692M1ZN",
+      "address": "SUNRIVER BUILDING, EMBASSY GOL, BANGALORE - 560071, INDIA"
+    },
+    "currency": "INR",
+    "total_amount": "800,004.00",
+    "line_items": [
+      {
+        "product_id": "",
+        "product_identifier_raw": "800,004 (EA)",
+        "product_identifier_type": "HSN/SAC Code.Name: 998311 Management consulting and management services including financial, strategic, human resources",
+        "description": "Service",
+        "unit": "EA",
+        "quantity": "15 Jun 2026",
+        "unit_price": "1.00 INR",
+        "line_total": "800,004.00 INR"
+      }
+    ]
+  }
+}

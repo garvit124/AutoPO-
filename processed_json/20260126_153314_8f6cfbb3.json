@@ -1,0 +1,32 @@
+{
+  "file_name": "20260126_153314_8f6cfbb3.pdf",
+  "extraction_method": "digital",
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "5000337699",
+    "po_date": "2025-06-20T10:03:00+05:30",
+    "buyer": {
+      "company_name": "Kyndryl Solutions Private Ltd.",
+      "gst_number": "29AAICG7692M1ZN",
+      "address": "Sunriver Building, Embassy Gol, Bangalore, KA 560071, India"
+    },
+    "seller": {
+      "company_name": "Intellioz Solutions India Private Ltd.",
+      "gst_number": "07AABCP0224D1Z4",
+      "address": "FIRST FLOOR, SUITE NO. 115, DLF Galleria, Mayur (New), Delhi 110091, India"
+    },
+    "currency": "INR",
+    "total_amount": "800004.00",
+    "line_items": [
+      {
+        "product_id": "",
+        "product_alias": "",
+        "description": "Service",
+        "unit": "",
+        "quantity": "15 Jun 2026",
+        "unit_price": "1.00 INR",
+        "line_total": "800004.00 INR"
+      }
+    ]
+  }
+}

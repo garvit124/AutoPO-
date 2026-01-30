@@ -1,0 +1,57 @@
+{
+  "file_name": "20260128_160754_6cb84344.pdf",
+  "email_metadata": {
+    "from_email": "Falgun Dhande <erfalgundhande@gmail.com>",
+    "received_at": "Wed, 28 Jan 2026 16:04:09 +0530"
+  },
+  "llm_model": "qwen2.5:7b",
+  "extracted_data": {
+    "po_number": "PO2026001",
+    "po_date": "",
+    "buyer": {
+      "company_name": "Customer Company 1",
+      "gst_number": "29ABCDE02Z5",
+      "address": "Bangalore, Karnataka - 560102",
+      "email": ""
+    },
+    "seller": {
+      "company_name": "Involexis.Team Private Limited",
+      "gst_number": "27AAFCI1234Z1ZQ",
+      "address": "Tower B, Tech Park, Hinjewadi Phase 2 Industrial Area, Pune, Maharashtra - 411057, India"
+    },
+    "currency": "INR",
+    "total_amount": "1025501.96",
+    "line_items": [
+      {
+        "product_id": "FKP0044820",
+        "product_identifier_raw": "Prestige Series 558 Toys",
+        "product_identifier_type": "SKU",
+        "description": "Prestige Series 558 Toys",
+        "unit": "",
+        "quantity": "13",
+        "unit_price": "35443.07",
+        "line_total": "460759.91"
+      },
+      {
+        "product_id": "FKP0024938",
+        "product_identifier_raw": "Sony Edition 337 Fashion",
+        "product_identifier_type": "SKU",
+        "description": "Sony Edition 337 Fashion",
+        "unit": "",
+        "quantity": "1",
+        "unit_price": "4842.25",
+        "line_total": "4842.25"
+      },
+      {
+        "product_id": "FKP0028716",
+        "product_identifier_raw": "Sony Prime 868 Fashion",
+        "product_identifier_type": "SKU",
+        "description": "Sony Prime 868 Fashion",
+        "unit": "",
+        "quantity": "18",
+        "unit_price": "22414.85",
+        "line_total": "403467.30"
+      }
+    ]
+  }
+}
