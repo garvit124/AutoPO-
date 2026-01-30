@@ -1,0 +1,50 @@
+
+# Virtual Environment
+venv/
+.venv/
+env/
+bin/
+lib/
+share/
+pyvenv.cfg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Project Data (Large Files)
+dataset.xlsx
+Sales_history.csv
+*.pdf
+*.json
+!manifest.json
+!core/*.json
+!config/*.json
+
+# Pipeline Folders
+incoming/
+processing/
+processed_json/
+failed/
+invoices/
+logs/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Credentials (ALWAYS IGNORE)
+*.env
+credentials.json
+token.json
+client_secret*.json
