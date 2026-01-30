@@ -1,77 +1,102 @@
 """
 Involexis Dashboard Theme Configuration
-Red & Black color scheme
+Modern Blue, White, and Soft Gray palette
 """
 
-# Color palette - Involexis Red & Black
-PRIMARY_COLOR = "#DC143C"  # Crimson Red
-SECONDARY_COLOR = "#000000"  # Black
-BACKGROUND_COLOR = "#1E1E1E"  # Dark Gray
-TEXT_COLOR = "#FFFFFF"  # White
-ACCENT_COLOR = "#FF4444"  # Light Red
+# Color palette - Professional Development Blue
+PRIMARY_COLOR = "#1B4965"  # Navy/Royal Blue
+SECONDARY_COLOR = "#F8F9FA"  # Soft Gray
+BACKGROUND_COLOR = "#FFFFFF"  # White
+TEXT_COLOR = "#2D3436"  # Dark Gray
+ACCENT_COLOR = "#2A9D8F"  # Teal Accent
 
-# Custom CSS for "Involexis Premium" look
+# Custom CSS for "Modern Professional" look
 CUSTOM_CSS = """
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    html, body, [data-testid="stAppViewContainer"] {
+        font-family: 'Inter', sans-serif;
+        background-color: #F8F9FA;
+    }
+
     .stApp {
-        background-color: #1E1E1E;
-        color: #FFFFFF !important;
+        background-color: #F8F9FA;
+        color: #2D3436 !important;
     }
     
     [data-testid="stSidebar"] {
-        background-color: #000000 !important;
+        background-color: #FFFFFF !important;
+        border-right: 1px solid #E9ECEF;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.02);
     }
     
     [data-testid="stSidebar"] * {
-        color: white !important;
+        color: #1B4965 !important;
     }
     
     h1, h2, h3 {
-        color: #DC143C !important;
+        color: #1B4965 !important;
+        font-weight: 700 !important;
     }
     
     .stMetric {
-        background-color: #2D2D2D;
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 4px solid #DC143C;
+        background-color: #FFFFFF;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid #E9ECEF;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
     
     .stMetric label {
-        color: #FFFFFF !important;
+        color: #636E72 !important;
+        font-weight: 600 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     
     .stMetric div {
-        color: #DC143C !important;
+        color: #1B4965 !important;
+        font-weight: 700 !important;
+        font-size: 1.8rem !important;
     }
     
     .stDataFrame {
-        background-color: #2D2D2D;
-        border-radius: 10px;
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        border: 1px solid #E9ECEF;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
     }
     
     .stButton>button {
-        background-color: #DC143C;
+        background-color: #1B4965;
         color: white;
-        border-radius: 5px;
+        border-radius: 8px;
         border: none;
+        padding: 10px 24px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(27, 73, 101, 0.2);
     }
     
     .stButton>button:hover {
-        background-color: #FF4444;
-        box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
+        background-color: #215A7A;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 12px rgba(27, 73, 101, 0.3);
+        color: white;
     }
     
     /* Logo styling */
     .logo-text {
-        font-size: 2em;
-        font-weight: bold;
-        color: #DC143C;
+        font-size: 1.8em;
+        font-weight: 800;
+        color: #1B4965;
         text-align: center;
-        padding: 20px;
-        background: linear-gradient(135deg, #000000 0%, #2D2D2D 100%);
-        border-radius: 10px;
+        padding: 25px;
+        background: #FFFFFF;
+        border-bottom: 2px solid #1B4965;
         margin-bottom: 30px;
+        letter-spacing: 2px;
     }
 </style>
 """

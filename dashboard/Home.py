@@ -105,20 +105,20 @@ try:
     with col_left:
         st.subheader("📈 Top Performing Products")
         if not monthly_sales.empty:
-            # Revert to Crimson/Black charts
+            # Modern Navy & Teal charts
             fig = px.bar(
                 monthly_sales,
                 x='product_name',
                 y='total_quantity',
                 text='total_quantity',
                 color='total_quantity',
-                color_continuous_scale=['#000000', '#DC143C'],
+                color_continuous_scale=['#2A9D8F', '#1B4965'],
                 labels={'total_quantity': 'Units Sold', 'product_name': 'Product'}
             )
             fig.update_layout(
-                plot_bgcolor='#1E1E1E',
-                paper_bgcolor='#1E1E1E',
-                font_color='#FFFFFF',
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#1B4965',
                 showlegend=False,
                 margin=dict(t=20, b=20, l=20, r=20)
             )
@@ -143,12 +143,12 @@ try:
                 values='Count',
                 names='Status',
                 hole=0.4,
-                color_discrete_sequence=['#DC143C', '#2D2D2D', '#FF4444', '#000000']
+                color_discrete_sequence=['#1B4965', '#2A9D8F', '#E9ECEF', '#CED4DA']
             )
             fig.update_layout(
-                plot_bgcolor='#1E1E1E',
-                paper_bgcolor='#1E1E1E',
-                font_color='#FFFFFF',
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
+                font_color='#1B4965',
                 margin=dict(t=20, b=20, l=20, r=20),
                 legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5)
             )
@@ -160,12 +160,12 @@ try:
     st.subheader("🕒 Live Activity Feed")
     recent = get_recent_activity(15)
     if not recent.empty:
-        # Style the dataframe for dark theme
+        # Style the dataframe for light theme
         def color_status(val):
-            if val == 'COMPLETED': return 'color: #00FF00'
-            if val == 'FAILED': return 'color: #FF4444'
-            if 'WAITING' in str(val): return 'color: #FFA500'
-            return 'color: white'
+            if val == 'COMPLETED': return 'color: #0F5132; background-color: #D1E7DD; border-radius: 4px;'
+            if val == 'FAILED': return 'color: #842029; background-color: #F8D7DA; border-radius: 4px;'
+            if 'WAITING' in str(val): return 'color: #664D03; background-color: #FFF3CD; border-radius: 4px;'
+            return 'color: #1B4965'
 
         st.dataframe(
             recent.style.map(color_status, subset=['status']),

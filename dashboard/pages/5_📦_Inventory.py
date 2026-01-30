@@ -65,12 +65,11 @@ try:
         # Inventory Table
         st.subheader("Stock Levels")
         
-        # Color coding for stocks
+        # Color coding for stocks (Modern Light Mode)
         def color_stock(val):
-            color = 'white'
-            if val == 0: color = '#FF4444'
-            elif val < 100: color = '#FFA500'
-            return f'color: {color}'
+            if val == 0: return 'background-color: #F8D7DA; color: #842029; font-weight: bold; border-radius: 4px;'
+            elif val < 100: return 'background-color: #FFF3CD; color: #664D03; font-weight: bold; border-radius: 4px;'
+            return 'color: #1B4965'
 
         st.dataframe(
             inventory_df.style.map(color_stock, subset=['stock_available']),

@@ -103,10 +103,11 @@ with col2:
             except Exception as e:
                 st.error(f"Error: {e}")
 
-st.sidebar.markdown("""
-### Service Status
-- **PostgreSQL**: ✅ ONLINE
-- **Ollama (Qwen)**: 🔄 READY
-""")
+st.sidebar.markdown("### Service Status")
+st.sidebar.success("PostgreSQL: Online")
+if "READY" in "READY": # Placeholder for real check check_ollama()
+    st.sidebar.success("AI Engine: Ready")
+else:
+    st.sidebar.warning("AI Engine: Starting")
 
 st.info("💡 **Tip**: Services started from here run as background processes. You can monitor progress in the 'Recent Activity' on the Home page.")
