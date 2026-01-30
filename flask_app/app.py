@@ -64,9 +64,22 @@ def emails():
     email_stats = get_email_count().to_dict('records')[0] if not get_email_count().empty else {}
     return render_template('emails.html', emails=pos, stats=email_stats)
 
+@app.route('/json-files')
+def json_files():
+    files = get_json_files()
+    return render_template('json_files.html', json_files=files)
+
 @app.route('/control-center')
 def control_center():
     return render_template('control.html')
+
+@app.route('/api/json-view')
+def json_view():
+    path = request.args.get('path')
+    if path and os.path.exists(path):
+        from dashboard.utils.file_utils import read_json_file
+        return jsonify(read_json_file(path))
+    return jsonify({"error": "File not found"}), 404
 
 # API Endpoints for interactive features
 @app.route('/api/pipeline/run', methods=['POST'])

@@ -14,11 +14,14 @@ def get_invoice_list():
         if filename.endswith('.pdf'):
             filepath = os.path.join(invoice_dir, filename)
             stat = os.stat(filepath)
+            created_dt = datetime.fromtimestamp(stat.st_mtime)
+            
             invoices.append({
-                'filename': filename,
+                'name': filename,
                 'path': filepath,
-                'size': stat.st_size,
-                'created': datetime.fromtimestamp(stat.st_mtime)
+                'size': f"{stat.st_size / 1024:.1f} KB",
+                'date': created_dt.strftime("%Y-%m-%d %H:%M:%S"),
+                'created': created_dt
             })
     
     return sorted(invoices, key=lambda x: x['created'], reverse=True)
@@ -35,11 +38,14 @@ def get_json_files():
         if filename.endswith('.json'):
             filepath = os.path.join(json_dir, filename)
             stat = os.stat(filepath)
+            created_dt = datetime.fromtimestamp(stat.st_mtime)
+            
             json_files.append({
-                'filename': filename,
+                'name': filename,
                 'path': filepath,
-                'size': stat.st_size,
-                'created': datetime.fromtimestamp(stat.st_mtime)
+                'size': f"{stat.st_size / 1024:.1f} KB",
+                'date': created_dt.strftime("%Y-%m-%d %H:%M:%S"),
+                'created': created_dt
             })
     
     return sorted(json_files, key=lambda x: x['created'], reverse=True)
