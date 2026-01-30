@@ -114,5 +114,45 @@
       "received_at": "Thu, 29 Jan 2026 15:42:16 +0530"
     },
     "json": "20260129_154234_ccb10617.json"
+  },
+  "20260130_123147_4878029f_email_body.pdf": {
+    "status": "failed",
+    "email_metadata": {
+      "from_email": "involexis.team@gmail.com",
+      "received_at": "Thu, 29 Jan 2026 20:45:32 -0800 (PST)"
+    },
+    "error": "invalid input syntax for type numeric: \"\"\nLINE 7: ...     VALUES ('',NULL,'','[Company Name]','','','','','{\"file...\n                                                             ^\n"
+  },
+  "20260130_123214_27d18fdb.pdf": {
+    "status": "processed",
+    "email_metadata": {
+      "from_email": "involexis.team@gmail.com",
+      "received_at": "Thu, 29 Jan 2026 23:02:09 -0800 (PST)"
+    },
+    "json": "20260130_123214_27d18fdb.json"
+  },
+  "test_po_verification.pdf": {
+    "status": "processed",
+    "email_metadata": {
+      "from_email": "test@example.com",
+      "received_at": "Fri, 30 Jan 2026 13:00:00 +0530"
+    },
+    "json": "test_po_verification.json"
+  },
+  "20260130_131920_ecdf2ea0.png": {
+    "status": "failed",
+    "email_metadata": {
+      "from_email": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "received_at": "Thu, 29 Jan 2026 23:49:11 -0800 (PST)"
+    },
+    "error": "Unable to get page count.\nSyntax Warning: May not be a PDF file (continuing anyway)\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't read xref table\n"
+  },
+  "20260130_131920_a75dc616.png": {
+    "status": "failed",
+    "email_metadata": {
+      "from_email": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "received_at": "Thu, 29 Jan 2026 23:49:11 -0800 (PST)"
+    },
+    "error": "Unable to get page count.\nSyntax Warning: May not be a PDF file (continuing anyway)\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't read xref table\n"
   }
 }

@@ -28,7 +28,8 @@
                     <td>{{ inv.date }}</td>
                     <td>{{ inv.size }}</td>
                     <td>
-                        <a href="#" class="btn btn-teal btn-sm"><i class="fas fa-download"></i> Download</a>
+                        <a href="{{ url_for('download_file', filename=inv.name) }}" class="btn btn-teal btn-sm"><i
+                                class="fas fa-download"></i> Download</a>
                     </td>
                 </tr>
                 {% else %}

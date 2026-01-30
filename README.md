@@ -32,33 +32,32 @@ This system automates the processing of Purchase Orders received via email. It h
         ./venv/bin/python scripts/load_data.py
         ```
 
-## 🏃‍♂️ How to Run
+## 🏃‍♂️ Quick Start
 
-Run these services in separate terminals from the **root directory**.
+Run the entire pipeline in the background with a single command:
 
-### 1. Start Email Ingestion (The Mailman)
-Downloads attachments to `incoming/`.
 ```bash
-./venv/bin/python services/email_ingestion_imap.py
+./start.sh
 ```
 
-### 2. Start Processing Service (The Brain)
-Watches `incoming/` and runs OCR -> Agent -> Email.
+- **Dashboard**: [http://localhost:5001](http://localhost:5001)
+- **Logs**: View live logs in the dashboard's Control Center or in `./logs/`.
+
+To stop all services:
 ```bash
-./venv/bin/python services/po_ocr_worker_service.py
+./stop.sh
 ```
 
-### 3. Start Reply Listener (The Ears)
-Listens for customer replies to partial proposals.
-```bash
-./venv/bin/python services/reply_listener.py
-```
+## 📊 Flask Dashboard Features
 
-### 4. Start Model Scheduler (Maintenance)
-Regularly updates Stock History and Demand Forecasts.
-```bash
-./venv/bin/python services/scheduler.py
-```
+- **Enterprise Overview**: Real-time metrics for POs, completion rates, and sales.
+- **Top Performing Products**: Interactive bar chart showing sales volume.
+- **Invoices Repository**: Browse and download generated PDF invoices.
+- **Control Center**:
+    - Trigger full automation or individual services.
+    - Live log streaming via SSE.
+    - **SMTP Configuration Test**: Verify email settings and signature.
+- **Email Monitor**: Track processed emails and their associated POs.
 
 ## 🧪 Testing
 

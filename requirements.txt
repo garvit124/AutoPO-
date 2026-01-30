@@ -10,8 +10,7 @@ reportlab
 python-dateutil
 schedule
 numpy
-opencv-python
-streamlit
+flask
 plotly
 google-auth
 google-auth-oauthlib

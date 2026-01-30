@@ -1,6 +1,8 @@
 import os
 import sys
-from flask import Flask, render_template, jsonify, request
+import subprocess
+import threading
+from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 import pandas as pd
 
 # Add the project root to the path so we can import from dashboard.utils
@@ -11,6 +13,7 @@ from dashboard.utils.db_queries import (
     get_all_pos, get_inventory_status, get_email_count
 )
 from dashboard.utils.file_utils import get_invoice_list, get_json_files
+from core.optimized_agent import send_email
 
 app = Flask(__name__)
 
@@ -29,7 +32,7 @@ def home():
     activity_df = get_recent_activity(10)
     activity = activity_df.to_dict('records')
     
-    sales_df = get_monthly_sales()
+    sales_df = get_monthly_sales().fillna(0)
     sales_data = sales_df.to_dict('records')
     
     status_data = {
@@ -84,9 +87,64 @@ def json_view():
 # API Endpoints for interactive features
 @app.route('/api/pipeline/run', methods=['POST'])
 def run_pipeline():
-    # Placeholder for running the pipeline (IMAP + OCR)
-    # In a real app, this would use Celery or a background thread
-    return jsonify({"status": "success", "message": "Pipeline triggered."})
+    try:
+        service = request.args.get('service', 'full')
+        
+        def run_service(cmd_list, name):
+            print(f"Starting background service: {name}")
+            subprocess.Popen(cmd_list, cwd=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+        if service == 'ingestion' or service == 'full':
+            run_service([sys.executable, 'services/email_ingestion_imap.py'], "Email Ingestion")
+        
+        if service == 'ocr' or service == 'full':
+            run_service([sys.executable, 'services/po_ocr_worker_service.py'], "OCR Worker")
+
+        return jsonify({"status": "success", "message": f"Pipeline ({service}) triggered in background."})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+@app.route('/api/logs')
+def get_logs():
+    log_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "email.log")
+    if not os.path.exists(log_path):
+        return "Log file not found", 404
+    
+    def generate():
+        with open(log_path, 'r') as f:
+            # Send last 50 lines initially
+            lines = f.readlines()
+            for line in lines[-50:]:
+                yield line
+            
+            # Follow the file
+            while True:
+                line = f.readline()
+                if not line:
+                    import time
+                    time.sleep(0.5)
+                    continue
+                yield line
+                
+    return Response(generate(), mimetype='text/plain')
+
+@app.route('/download/<path:filename>')
+def download_file(filename):
+    invoice_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "invoices")
+    return send_from_directory(invoice_dir, filename, as_attachment=True)
+
+@app.route('/api/test-email', methods=['POST'])
+def test_email_route():
+    try:
+        data = request.json
+        recipient = data.get('email', 'ggarvit392@gmail.com')
+        subject = "Test Email from Involexis Pipeline"
+        body = "This is a test email sent from the Involexis Pipeline Dashboard to verify SMTP settings."
+        
+        send_email(recipient, subject, body)
+        return jsonify({"status": "success", "message": f"Test email sent to {recipient}"})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)

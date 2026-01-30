@@ -57,7 +57,58 @@
     </div>
 </div>
 
+<div class="card">
+    <h3>📧 SMTP Configuration Test</h3>
+    <p style="margin: 15px 0; color: var(--text-muted);">Send a test email to verify your SMTP settings and signature.
+    </p>
+    <div style="display: flex; gap: 10px; max-width: 500px;">
+        <input type="email" id="testEmailAddr" class="form-control" value="ggarvit392@gmail.com"
+            style="flex: 2; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px;">
+        <button id="sendTestEmailBtn" class="btn btn-teal" style="flex: 1;">Send Test Email</button>
+    </div>
+    <div id="testEmailStatus" style="margin-top: 10px; font-weight: 500;"></div>
+</div>
+
+<div class="card">
+    <h3>📋 Live Pipeline Logs</h3>
+    <div id="logViewer"
+        style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; height: 300px; overflow-y: auto; font-size: 0.9rem; margin-top: 15px;">
+        Waiting for logs...
+    </div>
+</div>
+
 <script>
+    const logViewer = document.getElementById('logViewer');
+
+    function appendLog(text) {
+        const line = document.createElement('div');
+        line.innerText = text;
+        logViewer.appendChild(line);
+        logViewer.scrollTop = logViewer.scrollHeight;
+    }
+
+    function startLogStream() {
+        logViewer.innerText = '';
+        fetch('/api/logs')
+            .then(response => {
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+
+                function read() {
+                    reader.read().then(({ done, value }) => {
+                        if (done) return;
+                        const chunk = decoder.decode(value, { stream: true });
+                        chunk.split('\n').forEach(line => {
+                            if (line.strip) appendLog(line);
+                            else if (line.trim()) appendLog(line);
+                        });
+                        read();
+                    });
+                }
+                read();
+            });
+    }
+
     document.getElementById('runPipelineBtn').addEventListener('click', function () {
         const btn = this;
         const status = document.getElementById('pipelineStatus');
@@ -65,16 +116,16 @@
 
         btn.disabled = true;
         status.style.display = 'block';
-        msg.innerText = "Connecting to Gmail and running services...";
+        msg.innerText = "Triggering Full Pipeline...";
 
         fetch('/api/pipeline/run', { method: 'POST' })
             .then(response => response.json())
             .then(data => {
                 msg.innerText = data.message;
+                startLogStream();
                 setTimeout(() => {
                     btn.disabled = false;
                     status.style.display = 'none';
-                    alert("Pipeline finished successfully!");
                 }, 2000);
             })
             .catch(err => {
@@ -86,8 +137,55 @@
     document.querySelectorAll('.service-trigger').forEach(btn => {
         btn.addEventListener('click', function () {
             const service = this.getAttribute('data-service');
-            alert(`Triggering ${service}... check Home page for live updates.`);
+            fetch(`/api/pipeline/run?service=${service}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    startLogStream();
+                });
         });
     });
+
+    // Test Email Handler
+    document.getElementById('sendTestEmailBtn').addEventListener('click', function () {
+        const btn = this;
+        const email = document.getElementById('testEmailAddr').value;
+        const status = document.getElementById('testEmailStatus');
+
+        if (!email) {
+            status.innerText = "❌ Please enter an email address.";
+            status.style.color = "red";
+            return;
+        }
+
+        btn.disabled = true;
+        status.innerText = "⏳ Sending test email...";
+        status.style.color = "var(--primary-color)";
+
+        fetch('/api/test-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        })
+            .then(response => response.json())
+            .then(data => {
+                btn.disabled = false;
+                if (data.status === 'success') {
+                    status.innerText = "✅ " + data.message;
+                    status.style.color = "green";
+                } else {
+                    status.innerText = "❌ Error: " + data.message;
+                    status.style.color = "red";
+                }
+            })
+            .catch(err => {
+                btn.disabled = false;
+                status.innerText = "❌ Failed to reach server.";
+                status.style.color = "red";
+            });
+    });
+
+    // Start logs on load
+    startLogStream();
 </script>
 {% endblock %}

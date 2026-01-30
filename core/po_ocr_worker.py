@@ -35,7 +35,7 @@ os.makedirs(FAILED, exist_ok=True)
 # Optimized PaddleOCR Settings
 # use_angle_cls=False for speed if orientation is fixed
 # limit_side_len=1280 for faster processing of large images
-ocr = PaddleOCR(lang="en", use_angle_cls=False, show_log=False, limit_side_len=1280)
+ocr = PaddleOCR(lang="en", use_angle_cls=False)
 
 
 

@@ -111,7 +111,13 @@ def process_replies():
                 # 1. Identify PO
                 po_number = find_po_in_subject(subject)
                 if not po_number:
-                    print(f"Skipping: No PO number found in subject '{subject}'")
+                    # Fallback: check if the PO number is in the body
+                    match = re.search(r"(PO-\w+|[0-9]{4,})", body, re.IGNORECASE)
+                    if match:
+                        po_number = match.group(1)
+
+                if not po_number:
+                    print(f"Skipping: No PO number found in subject or body for '{subject}'")
                     continue
 
                 # 2. Classify Intent
@@ -122,6 +128,9 @@ def process_replies():
                 if intent in ["APPROVE", "REJECT"]:
                     from core.optimized_agent import handle_partial_response
                     handle_partial_response(po_number, intent)
+                    
+                    # Mark email as seen only if processed
+                    mail.store(mail_id, '+FLAGS', '\\Seen')
                 else:
                     print("Intent unclear. Manual review needed.")
 
@@ -129,4 +138,9 @@ def process_replies():
     mail.logout()
 
 if __name__ == "__main__":
-    process_replies()
+    while True:
+        try:
+            process_replies()
+        except Exception as e:
+            print(f"Error in reply listener loop: {e}")
+        time.sleep(30)

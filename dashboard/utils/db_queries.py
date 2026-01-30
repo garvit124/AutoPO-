@@ -55,16 +55,14 @@ def get_monthly_sales():
     engine = get_engine()
     query = text("""
         SELECT 
-            i.product_name,
+            COALESCE(i.product_name, poi.product_name) as product_name,
             SUM(poi.quantity) as total_quantity,
             SUM(poi.line_total) as total_revenue
         FROM purchase_order_items poi
         JOIN purchase_orders po ON poi.po_id = po.po_id
-        JOIN inventory i ON poi.product_id = i.product_id
+        LEFT JOIN inventory i ON poi.product_id = i.product_id
         WHERE po.status IN ('COMPLETED', 'PARTIAL_COMPLETED')
-        AND EXTRACT(MONTH FROM po.created_at) = EXTRACT(MONTH FROM CURRENT_DATE)
-        AND EXTRACT(YEAR FROM po.created_at) = EXTRACT(YEAR FROM CURRENT_DATE)
-        GROUP BY i.product_name
+        GROUP BY 1
         ORDER BY total_quantity DESC
         LIMIT 10
     """)

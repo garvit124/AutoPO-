@@ -17,3 +17,17 @@ __pycache__/
 Thumbs.db
 
 # Keep everything else as requested (.xlsx, .csv, processed_json, invoices, etc.)
+
+# Automation Logs
+logs/*.log
+*.log
+flask_app.log
+flask_debug.log
+
+# Temporary Processing Folders
+failed/
+processing/
+test_assets/
+incoming/
+invoices/
+processed_json/

@@ -27,7 +27,11 @@
 <div class="row" style="display: flex; gap: 30px;">
     <div class="card" style="flex: 2;">
         <h3>📈 Top Performing Products</h3>
-        <div id="salesChart" style="height: 400px; margin-top: 20px;"></div>
+        <div id="salesChart"
+            style="height: 400px; margin-top: 20px; display: flex; align-items: center; justify-content: center; background: #f8f9fa; border-radius: 8px;">
+            <div class="empty-msg" style="color: #6c757d; font-style: italic;">No sales data available.
+            </div>
+        </div>
     </div>
     <div class="card" style="flex: 1;">
         <h3>📊 Status Distribution</h3>
@@ -81,7 +85,8 @@
 <script>
     // Sales Chart
     const salesData = {{ sales_data | safe }};
-    if (salesData.length > 0) {
+    if (salesData && salesData.length > 0) {
+        document.getElementById('salesChart').innerHTML = '';
         const trace = {
             x: salesData.map(d => d.product_name),
             y: salesData.map(d => d.total_quantity),
@@ -91,10 +96,17 @@
             }
         };
         const layout = {
-            margin: { t: 0, r: 0, b: 40, l: 40 },
+            margin: { t: 20, r: 20, b: 120, l: 60 },
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
-            font: { family: 'Inter', color: '#1B4965' }
+            font: { family: 'Inter', color: '#1B4965' },
+            xaxis: {
+                tickangle: -45,
+                automargin: true
+            },
+            yaxis: {
+                title: 'Quantity'
+            }
         };
         Plotly.newPlot('salesChart', [trace], layout);
     }

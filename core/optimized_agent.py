@@ -15,12 +15,27 @@ import os
 ENABLE_EMAIL = True 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
+EMAIL_SIGNATURE = """
+Involexis
+Sales Team
+Phone: +91-8924506823
+Email: involexis.team@gmail.com
+"""
+
 # ============================================================
 # DB HELPERS
 # ============================================================
 
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
+
+def get_po_id_by_number(po_number):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("SELECT po_id FROM purchase_orders WHERE po_number = %s", (po_number,))
+    row = cur.fetchone()
+    conn.close()
+    return row[0] if row else None
 
 def get_po_details(po_id):
     conn = get_db_connection()
@@ -163,13 +178,14 @@ def reconstruct_decisions(items, stock_map):
 # ============================================================
 
 def generate_email_body(prompt):
+    full_prompt = f"{prompt}\n\nIMPORTANT: Do NOT include any signature or closing like 'Best regards', '[Your Name]', etc. Just write the body of the email. I will add the signature automatically."
     try:
         res = requests.post(OLLAMA_URL, json={
             "model": "qwen2.5:7b",
-            "prompt": prompt,
+            "prompt": full_prompt,
             "stream": False
         }, timeout=30)
-        return res.json().get("response", "")
+        return res.json().get("response", "").strip()
     except:
         return "Please find the attached invoice."
 
@@ -199,7 +215,8 @@ def send_email(to_email, subject, body, attachment_path=None):
         msg['To'] = to_email
         msg['Subject'] = subject
 
-        msg.attach(MIMEText(body, 'plain'))
+        full_body = f"{body}\n\n{EMAIL_SIGNATURE}"
+        msg.attach(MIMEText(full_body, 'plain'))
 
         if attachment_path:
             filename = os.path.basename(attachment_path)
@@ -230,10 +247,19 @@ def send_email(to_email, subject, body, attachment_path=None):
 # REPLY HANDLER (CALLED BY LISTENER)
 # ============================================================
 
-def handle_partial_response(po_id, decision):
+def handle_partial_response(po_id_or_num, decision):
     """
     decision: 'APPROVE' or 'REJECT'
     """
+    if isinstance(po_id_or_num, str) and not po_id_or_num.isdigit():
+        po_id = get_po_id_by_number(po_id_or_num)
+    else:
+        po_id = int(po_id_or_num)
+
+    if not po_id:
+        print(f"❌ PO ID not found for: {po_id_or_num}")
+        return
+
     print(f"🔄 Handling Partial Response for PO {po_id}: {decision}")
     
     if decision == "REJECT":
@@ -323,9 +349,6 @@ def process_po(po_id):
         # Partition Case (Partial or Mixed Full/None)
         print("⚠️ Partial Stock Available. Sending Proposal.")
         
-        # Create Proposal PDF (Use invoice gen but marked as Partial)
-        # We don't deduct stock yet! We wait for approval.
-        
         # Filter only items we CAN supply
         available_items = [d for d in decisions if d["allocatable"] > 0]
         
@@ -334,11 +357,24 @@ def process_po(po_id):
              update_po_status(po_id, "FAILED_NO_STOCK")
              return
 
-        pdf_path = generate_invoice_for_po(po_id, header, available_items)
-        print(f"📄 Partial Proposal Generated: {pdf_path}")
+        # NEW FLOW: Don't generate invoice yet. Send email listing available items.
+        item_list = "\n".join([f"- {d['product_name']}: {d['allocatable']} units" for d in available_items])
         
-        body = generate_email_body(f"Write an email to {header['buyer']} proposing partial shipment for PO {header['po_number']}. Ask for confirmation.")
-        send_email(header.get("buyer_email"), f"Action Required: Partial Stock for PO {header['po_number']}", body, pdf_path)
+        prompt = f"""
+        Dear {header['buyer']},
+
+        Write a professional email regarding Purchase Order {header['po_number']}.
+        Inform them that we currently have partial stock available for their order.
+        
+        Available Items:
+        {item_list}
+
+        Ask them if they would like us to proceed with shipping these available items now. 
+        Mention that we will generate the invoice and ship immediately upon their confirmation.
+        """
+        
+        body = generate_email_body(prompt)
+        send_email(header.get("buyer_email"), f"Update: Partial Stock for PO {header['po_number']}", body)
         
         update_po_status(po_id, "WAITING_FOR_REPLY")
 

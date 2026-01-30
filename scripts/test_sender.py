@@ -3,6 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import psycopg2
 import json
+import time
 from config.db_config import DB_CONFIG
 from core.optimized_agent import process_po
 
@@ -14,7 +15,9 @@ JSON_EMAIL = "json_contact@example.com"
 SENDER_EMAIL = "involexis.team@gmail.com"
 
 def create_po_with_sender():
-    print("Creating PO with DISTINCT Sender vs JSON email...")
+    ts = int(time.time())
+    po_num = f"PO-SENDER-TEST-{ts}"
+    print(f"Creating PO {po_num} with DISTINCT Sender vs JSON email...")
     conn = psycopg2.connect(**DB_CONFIG)
     cur = conn.cursor()
 
@@ -32,9 +35,9 @@ def create_po_with_sender():
         INSERT INTO purchase_orders (
             po_number, po_date, buyer, supplier, total_amount, status, raw_json, sender_email
         ) VALUES (
-            'PO-SENDER-TEST', '2026-01-28', 'Tech Corp Solutions', 'Flipkart Wholesale', 5000, 'NEW', %s, %s
+            %s, '2026-01-28', 'Tech Corp Solutions', 'Flipkart Wholesale', 5000, 'NEW', %s, %s
         ) RETURNING po_id
-    """, (json_str, SENDER_EMAIL))
+    """, (po_num, json_str, SENDER_EMAIL))
     
     po_id = cur.fetchone()[0]
 
