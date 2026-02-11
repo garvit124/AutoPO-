@@ -17,3 +17,5 @@ google-auth-oauthlib
 google-api-python-client
 openpyxl
 python-dotenv
+pillow
+img2pdf

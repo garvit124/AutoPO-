@@ -18,6 +18,7 @@ load_dotenv()
 # Mock Email (Print to console) or Real SMTP can be swapped here
 ENABLE_EMAIL = True 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
+LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5:1.5b")
 
 EMAIL_SIGNATURE = """
 Involexis
@@ -185,11 +186,43 @@ def generate_email_body(prompt):
     full_prompt = f"{prompt}\n\nIMPORTANT: Do NOT include any signature or closing like 'Best regards', '[Your Name]', etc. Just write the body of the email. I will add the signature automatically."
     try:
         res = requests.post(OLLAMA_URL, json={
-            "model": "qwen2.5:7b",
+            "model": LLM_MODEL,
             "prompt": full_prompt,
             "stream": False
         }, timeout=30)
-        return res.json().get("response", "").strip()
+        body = res.json().get("response", "").strip()
+        
+        # 1. Replace Placeholders with Real Info
+        replacements = {
+            "[Your Contact Information]": "involexis.team@gmail.com",
+            "[Your Name]": "Involexis Sales Team",
+            "[Company Name]": "Involexis",
+            "[Date]": datetime.now().strftime("%Y-%m-%d"),
+            "[Supplier Name]": "Involexis"
+        }
+        for key, val in replacements.items():
+            if key in body:
+                body = body.replace(key, val)
+        
+        # 2. Post-processing: Remove common closers/signatures
+        closers = ["Best regards", "Warm regards", "Sincerely", "Kind regards", "Regards", "Supplier:"]
+        for closer in closers:
+            # Case-insensitive check might be better, but exact match first
+            if closer in body:
+                body = body.split(closer)[0].strip()
+            if closer.lower() in body.lower():
+                 # Find index case-insensitively
+                 idx = body.lower().rfind(closer.lower())
+                 if idx != -1:
+                     body = body[:idx].strip()
+        
+        # Remove trailing comma or dot if split weirdly
+        if body.endswith(",") or body.endswith("."):
+             pass # keeping dot is fine, comma is weird for signature split
+        if body.endswith(","):
+             body = body[:-1].strip()
+             
+        return body
     except:
         return "Please find the attached invoice."
 
@@ -336,15 +369,40 @@ def process_po(po_id):
         print(f"📄 Invoice Generated: {pdf_path}")
         
         # Send Email
-        body = generate_email_body(f"Write a professional email to {header['buyer']} attaching invoice for PO {header['po_number']}.")
-        send_email(header.get("buyer_email"), f"Invoice for PO {header['po_number']}", body, pdf_path)
+        # Send Email
+        subject = f"Invoice Submission – {header['po_number']}"
+        body = f"""Dear {header['buyer']},
+
+I hope this email finds you well.
+
+Please find attached the fully generated invoice {header['po_number']} for the services/products provided as discussed. Kindly review the invoice and let me know if any additional information or clarification is required.
+
+Thank you for your cooperation. I look forward to your confirmation.
+
+Warm regards,"""
+        
+        send_email(header.get("buyer_email"), subject, body, pdf_path)
         
         update_po_status(po_id, "COMPLETED")
 
     elif all_none:
         print("❌ No Stock Available. Sending Apology.")
         
-        body = generate_email_body(f"Write a polite apology email to {header['buyer']} for PO {header['po_number']} stating items are out of stock.")
+        prompt = f"""
+        Act as the Supplier (Involexis). Write an email body to the Buyer ({header['buyer']}) regarding Purchase Order {header['po_number']}.
+        
+        Context:
+        - All requested items are out of stock.
+        - We will notify them when available.
+        
+        Instructions:
+        1. Start directly with "Dear {header['buyer']},"
+        2. Apologize for the stockout.
+        3. Do NOT include a Subject line.
+        4. Do NOT include a closing or signature.
+        """
+        body = generate_email_body(prompt)
+        
         send_email(header.get("buyer_email"), f"Update on PO {header['po_number']}", body)
         
         update_po_status(po_id, "FAILED_NO_STOCK")
@@ -365,16 +423,20 @@ def process_po(po_id):
         item_list = "\n".join([f"- {d['product_name']}: {d['allocatable']} units" for d in available_items])
         
         prompt = f"""
-        Dear {header['buyer']},
-
-        Write a professional email regarding Purchase Order {header['po_number']}.
-        Inform them that we currently have partial stock available for their order.
+        Act as the Supplier (Involexis). Write an email body to the Buyer ({header['buyer']}) regarding Purchase Order {header['po_number']}.
         
-        Available Items:
+        Context:
+        - We only have partial stock available.
+        - Available Items:
         {item_list}
-
-        Ask them if they would like us to proceed with shipping these available items now. 
-        Mention that we will generate the invoice and ship immediately upon their confirmation.
+        
+        Instructions:
+        1. Start directly with "Dear {header['buyer']},"
+        2. Inform them about the available items.
+        3. Ask if they want us to ship these available items immediately while waiting for the rest.
+        4. Do NOT include a Subject line.
+        5. Do NOT include a closing or signature (I will add it automatically).
+        6. Keep it professional and concise.
         """
         
         body = generate_email_body(prompt)

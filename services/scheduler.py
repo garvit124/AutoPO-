@@ -5,7 +5,8 @@ import subprocess
 import os
 from datetime import datetime
 
-PYTHON_EXEC = "/Users/garvitgupta/Desktop/po_pipeline/venv/bin/python"
+import sys
+PYTHON_EXEC = sys.executable
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def run_sales_history_update():

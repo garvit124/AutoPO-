@@ -24,7 +24,7 @@ INCOMING = os.path.join(BASE_DIR, "incoming")
 LOGS = os.path.join(BASE_DIR, "logs")
 MANIFEST = os.path.join(BASE_DIR, "manifest.json")
 
-ALLOWED_EXT = (".pdf", ".docx", ".jpg", ".jpeg", ".png")
+ALLOWED_EXT = (".pdf", ".docx", ".doc", ".jpg", ".jpeg", ".png")
 
 INITIAL_POLL = 5          # seconds
 MAX_POLL = 1800           # 30 minutes

@@ -10,6 +10,7 @@ from pdf2image import convert_from_path
 from paddleocr import PaddleOCR
 
 from core.db_insert import insert_po
+from core.converter import ensure_pdf
 
 
 # ================= CONFIG ================= #
@@ -23,8 +24,8 @@ OUTPUT = os.path.join(BASE_DIR, "processed_json")
 FAILED = os.path.join(BASE_DIR, "failed")
 MANIFEST = os.path.join(BASE_DIR, "manifest.json")
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-LLM_MODEL = "qwen2.5:7b"
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
+LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5:1.5b")
 
 # ========================================= #
 
@@ -81,7 +82,7 @@ def extract_text_from_pdf(pdf_path):
         print(f"📸 Processing page {i+1}...")
         gray = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2GRAY)
         # Use simple OCR call for speed
-        result = ocr.ocr(gray, cls=False)
+        result = ocr.ocr(gray)
         if result:
             for line in result:
                 if line:
@@ -163,7 +164,13 @@ OCR TEXT:
         timeout=120
     )
 
-    raw = response.json()["response"]
+    try:
+        data = response.json()
+        print(f"DEBUG: Ollama response keys: {data.keys()}")
+        raw = data["response"]
+    except Exception as e:
+        print(f"DEBUG: Failed to parse Ollama response: {response.text}")
+        raise e
     return json.loads(raw[raw.find("{"): raw.rfind("}") + 1])
 
 
@@ -188,7 +195,17 @@ def run_ocr(file_name):
     shutil.move(src, proc)
 
     try:
-        text = extract_text_from_pdf(proc)
+        # --- CONVERSION LAYER ---
+        pdf_path = ensure_pdf(proc)
+        if not pdf_path:
+            raise Exception(f"Failed to convert {file_name} to PDF")
+        
+        # If the filename changed (e.g. from .png to .pdf)
+        actual_pdf_name = os.path.basename(pdf_path)
+        if actual_pdf_name != file_name:
+            print(f"🔄 File converted to: {actual_pdf_name}")
+        
+        text = extract_text_from_pdf(pdf_path)
         print(f"OCR text length: {len(text)}")
 
         extracted_data = extract_po_with_llm(text)
